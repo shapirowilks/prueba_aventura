@@ -10,8 +10,7 @@ public class Objeto
     {
         Console.WriteLine();
         Console.WriteLine("Es una llave azul.");
-        llaveVista = true;
-        return llaveVista;
+        return llaveVista = true;
     }
 
     public bool CogerObjeto()

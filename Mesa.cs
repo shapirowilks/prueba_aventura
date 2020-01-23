@@ -9,8 +9,7 @@ public class Mesa
     {
         Console.WriteLine();
         Console.WriteLine("Es una mesa de comedor con cuatro patas.");
-        mesaVista = true;
-        return mesaVista;
+        return mesaVista = true;
     }
 
 }

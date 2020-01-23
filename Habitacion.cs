@@ -37,10 +37,18 @@ public class Habitacion
         }
         
         
-        }   
+    }
+
+    public void CambiarHabitacion()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Entrando en la habitación siguiente.");
+        Console.WriteLine();
+        Console.ReadLine();
+    }
     
         
-    }
+}
 
     
 

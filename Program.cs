@@ -70,10 +70,7 @@ public class Inicial
             }
             while (estadopuerta != true);
 
-            Console.WriteLine();
-            Console.WriteLine("Entrando en la habitación siguiente.");
-            Console.WriteLine();
-            Console.ReadLine();
+            habitacion.CambiarHabitacion();
 
             //incremento de habitacion
             habitacionactual++;

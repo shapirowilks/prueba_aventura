@@ -10,8 +10,7 @@ public class Puerta
     {
         Console.WriteLine();
         Console.WriteLine("Es una puerta maciza, no parece que vaya a ceder. Tiene una cerradura de color azul.");
-        puertaVista = true;
-        return puertaVista;
+        return puertaVista = true;
     }
 
     public bool AbrirPuerta(bool tienellave)

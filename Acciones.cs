@@ -16,16 +16,19 @@ public class Acciones
     public int AccionMultiple(string decision)
     {
         //examinar puerta = 1; examinar mesa = 2; examinar objeto = 3; coger objeto = 4;  abrir puerta = 5;
+        //usamos un método creado específicamente para buscar en el array de la cadena
+        
         int respuesta = 0;
-        if ((decision.IndexOf("puerta",0) >= 0) && ((decision.IndexOf("examinar",0) >= 0) || (decision.IndexOf("mirar",0) >= 0)))
+
+        if ((EncontrarTexto(decision, "puerta") == true) && ((EncontrarTexto(decision, "examinar") == true)||(EncontrarTexto(decision, "mirar")==true)))
             respuesta = 1;
-        else if ((decision.IndexOf("mesa",0) >= 0) && ((decision.IndexOf("examinar",0) >= 0) || (decision.IndexOf("mirar",0) >= 0)))
+        else if ((EncontrarTexto(decision, "mesa") == true)&& ((EncontrarTexto(decision, "examinar") == true) || (EncontrarTexto(decision, "mirar") == true)))
             respuesta = 2;
-        else if ((decision.IndexOf("llave",0) >= 0) && ((decision.IndexOf("examinar",0) >= 0) || (decision.IndexOf("mirar",0) >= 0)))
+        else if ((EncontrarTexto(decision, "llave") == true)&& ((EncontrarTexto(decision, "examinar") == true) || (EncontrarTexto(decision, "mirar") == true)))
             respuesta = 3;
-        else if ((decision.IndexOf("llave",0) >= 0) && (decision.IndexOf("coger",0) >= 0))
+        else if ((EncontrarTexto(decision, "llave") == true)&& ((EncontrarTexto(decision, "coger") == true)))
             respuesta = 4;
-        else if ((decision.IndexOf("puerta",0) >= 0) && (decision.IndexOf("abrir",0) >= 0))
+        else if ((EncontrarTexto(decision, "puerta") == true)&& ((EncontrarTexto(decision, "abrir") == true)))
             respuesta = 5;
         return respuesta;
 
@@ -41,5 +44,20 @@ public class Acciones
     {
         Console.WriteLine("Ya has cogido {0} antes. Prueba otra cosa.", objetocogido);
         Console.WriteLine();
+    }
+
+    public bool EncontrarTexto(string cadena, string texto)
+    {
+        bool encontrado = false;
+        string[] cadenaPartida = cadena.Split(' ');
+        for (int i=0;i<cadenaPartida.Length;i++)
+        {
+            if (cadenaPartida[i] == texto)
+            {
+                encontrado = true;
+            }
+            
+        }
+        return encontrado;
     }
 }
